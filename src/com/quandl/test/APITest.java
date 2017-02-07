@@ -22,7 +22,6 @@ public class APITest {
         Response resp = get("https://www.quandl.com/api/v3/databases.json");
         String api_response = resp.asString();
         api_response = api_response.substring(api_response.indexOf(":")+1);
-
         JSONArray jsonResponse = new JSONArray(api_response);
         String databasename = jsonResponse.getJSONObject(0).getString("name");
         String databasecode = jsonResponse.getJSONObject(0).getString("database_code");
